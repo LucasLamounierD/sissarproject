@@ -117,14 +117,18 @@ $("#vag_valorPag").mask("R$0000000,00");
                 </div>
                 
                 <div class="form-group">
-                    <label for="vag_horarios">Horarios de Trabalho:</label><br/>
-                    <select class="form-control" name="{{$ent or "ent"}}_horarios" {{$enabledEdition['horarios'] or ""}}>
-                        <option value="08:00-12:00 13:00-17:00"@if(isset($resp)&& $resp['horarios']=="08:00-12:00 13:00-17:00"){{"selected"}}@endif>08:00-12:00 13:00-17:00</option>
-                        <option value="15:00-19:00 20:00-00:00"@if(isset($resp)&& $resp['horarios']=="15:00-19:00 20:00-00:00"){{"selected"}}@endif>15:00-19:00 20:00-00:00</option>
-                        <option value="Horário flexível"@if(isset($resp)&& $resp['horarios']=="Horário flexível"){{"selected"}}@endif>Horário flexível</option>
+                    <label for="vag_horario">Horarios de Trabalho:</label><br/>
+                    <select class="form-control" name="{{$ent or "ent"}}_horario" {{$enabledEdition['horario'] or ""}}>
+                        <option value="08:00-12:00 13:00-17:00"@if(isset($resp)&& $resp['horario']=="08:00-12:00 13:00-17:00"){{"selected"}}@endif>08:00-12:00 13:00-17:00</option>
+                        <option value="15:00-19:00 20:00-00:00"@if(isset($resp)&& $resp['horario']=="15:00-19:00 20:00-00:00"){{"selected"}}@endif>15:00-19:00 20:00-00:00</option>
+                        <option value="Horário flexível"@if(isset($resp)&& $resp['horario']=="Horário flexível"){{"selected"}}@endif>Horário flexível</option>
                     </select>            
                 </div>
-                
+                <div class="form-group">
+                    <label for="vag_beneficios">Benefícios:</label><br/>
+                    <input type="text" size="103" maxlength="110" class="form-control" name="{{$ent or "ent"}}_beneficios"
+                           value="{{$resp['beneficios'] or ""}}" required="required" {{$enabledEdition['beneficios'] or ""}}>
+                </div>
             </div> 
         </fieldset>
         @include('../templates/form/areaBotao') 

@@ -18,7 +18,7 @@ class VagaController extends Controller
             'vag_regime'=> "É obrigatorio preechimento do campo Regime",
             'vag_dias'=> "É obrigatorio preechimento do campo Dias",
             'vag_horario'=> "É obrigatorio preechimento do campo Horário",
-            'vag_beneficios'=> "Benefícios"                     
+            'vag_beneficios'=> "É obrigatorio preenchimento do campo Benefícios"                     
     ];
     
     public function __construct(Vaga $f){
@@ -136,7 +136,7 @@ class VagaController extends Controller
         $insert = $this->vag->create($dataForm);//cadastrado no banco de dados 
         
         if($insert)//se ocorre com sucesso direciona para..
-           return redirect('/'); 
+           return redirect('/vaga/list'); 
         else return redirect ()->back();
     }
     
