@@ -8,7 +8,7 @@ class Vaga extends Model
 {
     protected $fillable = [
         'vag_id','vag_nome','vag_tipoPag','vag_valorPag','vag_escolar',
-        'vag_idioma','vag_estado','vag_regime','vag_dias',
+        'vag_idioma','vag_estado','vag_active','vag_regime','vag_dias',
         'vag_horario','vag_beneficios',   
     ];
     

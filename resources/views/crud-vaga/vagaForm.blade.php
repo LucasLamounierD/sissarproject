@@ -11,7 +11,8 @@
 
     .pagina{position: absolute;
             top:100px;
-            left:15%;        
+            left:15%; 
+            right: 15%;
             width:1050en;
             background-color: whitesmoke;
             padding: 4%;
@@ -36,7 +37,7 @@
 <script type="text/javascript">    
     
 $(function(){
-$("#valorPag").mask("R$0000000,00");
+$("#vag_valorPag").mask("R$0000000,00");
 });
 </script>
 
@@ -57,7 +58,7 @@ $("#valorPag").mask("R$0000000,00");
           '>
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <fieldset>
-            <legend>Informações da empresa:</legend>            
+            <legend>Informações da vaga:</legend>            
             <div class="info_pessoal">
                 @include('../templates/components/fieldName') 
                 <br/>
@@ -73,7 +74,7 @@ $("#valorPag").mask("R$0000000,00");
                     <input type="text" size="103" maxlength="110" class="form-control" name="{{$ent or "ent"}}_idioma"
                            value="{{$resp['idioma'] or ""}}" required="required" {{$enabledEdition['idioma'] or ""}}>
                 </div>
-                
+                <br/>
                 <div class="form-group">
                     <label for="vag_tipoPag">Tipo de Pagamento:</label><br/>
                     <select class="form-control" name="{{$ent or "ent"}}_tipoPag" {{$enabledEdition['tipoPag'] or ""}}>
@@ -85,7 +86,7 @@ $("#valorPag").mask("R$0000000,00");
                 </div>
                  <div class="form-group">
                     <label for="vag_valorPag">Valor de Pagamento:</label><br/>
-                    <input type="text" size="20" maxlength="15" class="form-control" name="{{$ent or "ent"}}_valorPag"
+                    <input type="text" size="25" maxlength="15" class="form-control" id="vag_valorPag" name="{{$ent or "ent"}}_valorPag"
                            value="{{$resp['valorPag'] or ""}}"  required="required" {{$enabledEdition['valorPag'] or ""}}>
                 </div>
                 
@@ -104,7 +105,7 @@ $("#valorPag").mask("R$0000000,00");
                         <option value="PJ"@if(isset($resp)&& $resp['regime']=="PJ"){{"selected"}}@endif>PJ</option>
                         </select>            
                 </div>
-                
+                <br/>
                 <div class="form-group">
                     <label for="vag_dias">Dias de Trabalho:</label><br/>
                     <select class="form-control" name="{{$ent or "ent"}}_dias" {{$enabledEdition['dias'] or ""}}>

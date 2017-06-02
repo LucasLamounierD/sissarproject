@@ -78,7 +78,6 @@ Route::post('/empresa/edit/{id}','EmpresaController@edit')->middleware("CheckUse
 Route::get('/empresa/delete/{id}','EmpresaController@destroy')->middleware("CheckUserAdmin");
 
 
-
 Route::get('/vaga/form/{id?}', 'VagaController@create');
 
 Route::post('/vaga/cadastrar','VagaController@store');

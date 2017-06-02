@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Vaga;
 class VagaController extends Controller
 {
     private $vag;
