@@ -71,6 +71,13 @@ Route::post('/empresa/cadastrar','EmpresaController@store')->middleware("CheckUs
 
 Route::get('/empresa/list', 'EmpresaController@index')->middleware("CheckUserAdmin");
 
+
+Route::get('/empresa/show/{id}','EmpresaController@show')->middleware("CheckUserAdmin");
+
+Route::post('/empresa/edit/{id}','EmpresaController@edit')->middleware("CheckUserAdmin");
+
+Route::get('/empresa/delete/{id}','EmpresaController@destroy')->middleware("CheckUserAdmin");
+
 Route::get('/empresa/show/{id}','EmpresaController@show')->middleware("CheckUserAdmin");
 
 Route::post('/empresa/edit/{id}','EmpresaController@edit')->middleware("CheckUserAdmin");
@@ -89,3 +96,9 @@ Route::get('/vaga/show/{id}','VagaController@show');
 Route::post('/vaga/edit/{id}','VagaController@edit');
 
 Route::get('/vaga/delete/{id}','VagaController@destroy');
+
+
+
+
+Route::get('/curriculo/form', 'CurriculoController@create');
+
